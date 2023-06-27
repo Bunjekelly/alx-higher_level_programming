@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+0-square.py
+"""Defines an empty square class"""
 
 class Square:
-    def __init__(self):
         """an empty square class"""
         pass
