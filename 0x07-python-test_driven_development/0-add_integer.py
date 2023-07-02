@@ -3,6 +3,7 @@
 # 0-add_integer.py
 """a function that adds 2 integers"""
 
+
 def add_integer(a, b=98):
     """accepts integers or float values
     and returns the sum of integer addition"""
