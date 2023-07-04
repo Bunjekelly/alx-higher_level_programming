@@ -1,0 +1,38 @@
+
+"""test file for a function that prints a text with 2 new lines after each of these characters: ., ? and :"""
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(12)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation({"key": 1, "key": 2})
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation("kelly.")
+kelly.
+<BLANKLINE>
+
+>>> text_indentation(" Bih?")
+Bih?
+<BLANKLINE>
+
+>>> text_indentation("Kelly. ")
+Kelly
+<BLANKLNE>
+
+>>> text_indentation("Kelly?Yeah I heard she is into tech.")
+Kelly?
+<BLANKLINE>
+Yeah I heard she is into tech.
+<BLANKLINE>
+
