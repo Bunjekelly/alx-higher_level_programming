@@ -1,0 +1,23 @@
+
+"""doctest for a function that multiplies matrices using the numpy module"""
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+
+>>> lazy_matrix_mul([[2,4], [3, 4]])
+Traceback (most recent call last):
+        ...
+TypeError: missing 1 required positional argumen
+
+>>> lazy_matrix_mul([[2, 3], [1, 4]], [[2, 4, 5], [2, 4]])
+Traceback (most recent call last):
+	...
+ValueError: Can't be multiplied because of no alignment of rows and colums
+
+>>> lazy_matrix_mul([[]], [[2, 5], [2, 1]])
+Traceback (most recent call last):
+	...
+ValueError: m_a can't be empty
+
+>>> lazy_matrix_mul([[1, 1], [2, 3]], [[2, 1], [2, 3]])
+[[4, 10], [4, 11]]
