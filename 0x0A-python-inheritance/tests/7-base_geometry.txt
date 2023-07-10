@@ -1,0 +1,69 @@
+"""test cases for class geometry"""
+
+ >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Checking module docs:
+         >>> m = __import__("7-base_geometry").__doc__
+         >>> len(m) > 1
+         True
+
+Checking class docs:
+         >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+         >>> len(c) > 1
+         True
+
+case 1
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+case 2
+	>>> bg.area(2)
+	Traceback (most recent call last):
+		...
+	TypeError: area() takes 1 positional argument but 2 were given
+
+
+case 3
+	>>> bg.integer_validator("integer", -10)
+	Traceback (most recent call last):
+		...
+	ValueError: integer must be greater than 0
+
+case 4
+	>>> bg.integer_validator("integer", 0)
+	Traceback (most recent call last):
+		...
+	ValueError: integer must be greater than 0
+
+case 5
+	>>> bg.integer_validator("bool", True)
+	Traceback (most recent call last):
+		...
+	TypeError: bool must be an integer
+
+case 6
+	>>> bg.integer_validator("float", 6.5)
+	Traceback (most recent call last):
+		...
+	TypeError: float must be an integer
+
+case 7
+	>>> bg.integer_validator("string", "kels")
+	Traceback (most recent call last):
+		...
+	TypeError: string must be an integer
+
+case 8
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+case 9
+	>>> bg.integer_validator("integer", 1, 2)
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
