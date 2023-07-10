@@ -9,4 +9,7 @@ def is_same_class(obj, a_class):
     Args: obj, a_class
     Returns true is object is an instance of class otherwise false
     """
-    return isinstance(obj, a_class) and type(obj) == a_class
+    if obj.__class__ is a_class:
+        return True
+    else:
+        return False
