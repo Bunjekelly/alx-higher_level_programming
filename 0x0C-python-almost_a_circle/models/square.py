@@ -12,7 +12,7 @@ class Square(Rectangle):
         """initializing the class"""
         self.size = size
 
-        super().__init__(size, size, x, y, id)
+        super().__init__(self, size, size, x, y, id)
 
     def __str__(self):
         """return [Square] (<id>) <x>/<y> - <size>"""
@@ -24,14 +24,14 @@ class Square(Rectangle):
         return self.width
 
     @size.setter
-    def size(self, value):
+    def size(self, size):
         """sets the size"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
-        if value < 0:
+        if size <= 0:
             raise ValueError("size must be > 0")
-        self.width = value
-        self.height = value
+        self.width = size
+        self.height = size
 
     def update(self, *args, **kwargs):
         """sets arguments"""
