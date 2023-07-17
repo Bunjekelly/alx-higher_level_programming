@@ -111,9 +111,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        v = f"[Rectangle] ({self.id})\
-{self.x}/{self.y} - {self.width}/{self.height}"
-        return v
+        return f"[Rectangle] ({self.id}) \
+{self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
