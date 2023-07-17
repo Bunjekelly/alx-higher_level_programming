@@ -12,7 +12,7 @@ class Square(Rectangle):
         """initializing the class"""
         self.size = size
 
-        super().__init__(self, size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """return [Square] (<id>) <x>/<y> - <size>"""
