@@ -88,3 +88,16 @@ class Base:
         writer = csv.DictWriter(file1, fieldnames=fields)
         for obj in list_objs:
             writer.writerows(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in csv"""
+        filename = cls.__name__ + ".csv"
+        list1 = []
+        if os.path.exists(filename):
+            with open(filename) as file1:
+                obj = csv.DictReader(file1)
+                for line in obj:
+                    dic = {key: int(value) for key, value in line.items()}
+                    list1.append(cls.create(**dic))
+        return list1
