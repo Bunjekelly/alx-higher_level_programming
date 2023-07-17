@@ -5,6 +5,7 @@
 import sys
 from models.base import Base
 
+
 class Rectangle(Base):
     """Rectangle class"""
 
@@ -111,7 +112,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id})\
+                {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
@@ -127,4 +129,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """"returns the dictionary representation of a Rectangle"""
-        return {"id": self.id, "width": self.width, "height":  self.height, "x": self.x, "y": self.y}
+        return {"id": self.id, "width": self.width,
+                "height":  self.height, "x": self.x, "y": self.y}
