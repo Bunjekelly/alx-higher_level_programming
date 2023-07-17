@@ -28,13 +28,13 @@ class Rectangle(Base):
         if type(x) is not int:
             raise TypeError("x must be an integer")
         if x < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
         self.__x = x
 
         if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
         self.__y = y
 
     @property
@@ -111,8 +111,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        return f"[Rectangle]\
-                ({self.id}){self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        sr1 = f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return sr1
 
 
     def update(self, *args, **kwargs):
