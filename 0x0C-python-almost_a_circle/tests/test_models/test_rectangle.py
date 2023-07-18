@@ -73,5 +73,34 @@ class RectangleTest(unittest.TestCase):
         r2 = Rectangle(3, 2, 5, 8, 15)
         self.assertEqual(r2.area(), 6)
 
+    def test_rectangle_display(self):
+        r = Rectangle(3, 6)
+        result = '###\n' * 6
+        with patch('sys.stdout', new=StringIO()) as pout:
+            d.display()
+            self.assertEqual(pout.getvalue(), result)
+
+    def test_rectangle_str(self):
+        """testing for rectangle str representation"""
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r.__str__(),"[Rectangle] (12) 2/1 - 4/6")
+
+    def test_rectangle_args(self):
+        """testing for rectangle args update"""
+        r = Rectangle(10, 10, 10, 10, 10)
+        self.up.update(2)
+        self.assertEqual(r.update(), "[Rectangle] (2) 10/10 - 10/10")
+
+    def test_rectangle_kwargs(self):
+        """testing for rectangle kwargs updates"""
+        r = Rectangle(10, 10, 10, 10)
+        r.update(y=3, width=4, x=5, id=45)
+        self.assertEqual(r.update(), "[Rectangle] (45) 5/3 - 4/2")
+
+    def test_to_dictionary(self):
+        r = Rectangle(10, 2, 1, 9)
+        result = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        self.assertEqual(r.to_dictionary(), result)
+
     if __name__ == "__main__":
         unittest.main()
