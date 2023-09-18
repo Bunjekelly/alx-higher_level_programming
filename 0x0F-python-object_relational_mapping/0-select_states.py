@@ -4,10 +4,15 @@
 
 import MySQLdb
 
-db = MySQLdb.connect(host="localhost", user="root",
-                     passwd="b_techie", db="hbtn_0e_0_usa", port=3306)
+if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-cursor = db.cursor()
+    connect = MySQLdb.connect(host="localhost", user=username, passwd=password,
+                           db=database, port=3306)
+
+cursor = connect.cursor()
 
 cursor.execute("SELECT * FROM states ORDER BY id ASC;")
 
