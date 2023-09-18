@@ -21,4 +21,5 @@ result = cursor.fetchall()
 for i in result:
     print(i)
 
-db.close()
+cursor.close()
+connect.close()
