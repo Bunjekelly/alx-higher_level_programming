@@ -3,22 +3,27 @@
 """ a script that takes in an argument and displays all values
 in the states table of hbtn_0e_0_usa where name matches the argument."""
 
-import sys
 import MySQLdb
+import sys
 
-db = MySQLdb.connect(host="localhost", user="root",
-                     passwd="b_techie", db="hbtn_0e_0_usa", port=3306)
+if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    state = sys.argv[4]
 
-cursor = db.cursor()
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=database)
 
-state = sys.argv[4]
+    cursor = db.cursor()
 
-cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
+    cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
                    ORDER BY id ASC""".format(state))
 
-result = cursor.fetchall()
+    rows = cursor.fetchall()
 
-for i in result:
-    print(i)
+    for row in rows:
+        print(row)
 
-db.close()
+    cursor.close()
+    db.close()
