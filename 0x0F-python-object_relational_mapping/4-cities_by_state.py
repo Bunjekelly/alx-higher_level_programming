@@ -22,7 +22,6 @@ if __name__ == "__main__":
     ORDER BY cities.id ASC;
     """)
 
-
     rows = cursor.fetchall()
 
     for row in rows:
