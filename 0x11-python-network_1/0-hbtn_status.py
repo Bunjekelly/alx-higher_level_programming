@@ -5,7 +5,6 @@ if __name__ == "__main__":
 
     import urllib.request
 
-
     url = "https://alx-intranet.hbtn.io/status"
     obj = urllib.request.Request(url)
     with urllib.request.urlopen(obj) as response:
