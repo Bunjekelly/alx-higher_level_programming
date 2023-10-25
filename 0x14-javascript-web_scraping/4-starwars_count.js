@@ -13,6 +13,6 @@ request(apiurl, (err, response, body) => {
     const Movies = data.filter(movie =>
       movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/'));
 
-    console.log(Movies.length);
+    console.log(`${Movies.length}`);
   }
 });
