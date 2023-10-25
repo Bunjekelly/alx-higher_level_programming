@@ -6,7 +6,7 @@ const apiurl = process.argv[2];
 
 request(apiurl, (err, response, body) => {
   if (err) {
-    console.log(err);
+    console.error(err);
   } else {
     const data = JSON.parse(body).results;
 
